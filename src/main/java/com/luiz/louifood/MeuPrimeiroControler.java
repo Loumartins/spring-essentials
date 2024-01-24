@@ -17,6 +17,7 @@ public class MeuPrimeiroControler {
         System.out.println("MeuPrimeiroController " + ativacaoClienteService);
     }
 
+
     @GetMapping("/hello")
     @ResponseBody
     public String hello(){
