@@ -5,7 +5,6 @@ import com.luiz.louifood.di.notificacao.Notificador;
 import com.luiz.louifood.di.notificacao.NotificadorEmail;
 import org.springframework.stereotype.Component;
 
-@Component
 public class AtivacaoClienteService {
     private Notificador notificador;
 
