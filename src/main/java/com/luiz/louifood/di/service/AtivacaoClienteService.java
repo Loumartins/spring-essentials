@@ -5,6 +5,8 @@ import com.luiz.louifood.di.notificacao.NivelUrgencia;
 import com.luiz.louifood.di.notificacao.Notificador;
 import com.luiz.louifood.di.notificacao.NotificadorEmail;
 import com.luiz.louifood.di.notificacao.TipoDoNotificador;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -24,6 +26,15 @@ public class AtivacaoClienteService {
 //        this.notificador = notificador;
 //    }
 
+    @PostConstruct
+    public void init() {
+        System.out.println("Init" + notificador);
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Destroy");
+    }
 
     public void ativar(Cliente cliente) {
         cliente.ativar();

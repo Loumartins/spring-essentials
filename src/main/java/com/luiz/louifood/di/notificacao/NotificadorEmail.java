@@ -4,14 +4,11 @@ import com.luiz.louifood.di.modelo.Cliente;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@Profile("prod")
+//@Profile("prod")
 @TipoDoNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificadorEmail implements Notificador {
 
-    public NotificadorEmail() {
-        System.out.println("Notificador email real");
-    }
     private boolean caixaAlta;
 @Override
     public void notificar(Cliente cliente, String mensagem){
