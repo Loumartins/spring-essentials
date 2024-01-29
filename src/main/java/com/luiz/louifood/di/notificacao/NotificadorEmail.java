@@ -1,9 +1,11 @@
 package com.luiz.louifood.di.notificacao;
 
 import com.luiz.louifood.di.modelo.Cliente;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-//@Primary
+
+//@Profile("prod")
+@TipoDoNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificadorEmail implements Notificador {
 
