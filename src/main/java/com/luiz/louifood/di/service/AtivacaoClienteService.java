@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AtivacaoClienteService {
     //injecao de dependecia no atributo
-    @Autowired
+    @Autowired(required = false)
     private Notificador notificador;
 
 //    ponto de injeçao de dependencia no constructor
@@ -20,8 +20,11 @@ public class AtivacaoClienteService {
 
     public void ativar(Cliente cliente) {
         cliente.ativar();
-
-        notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+        if(notificador != null){
+            notificador.notificar(cliente, "Seu cadastro no sistema esta ativo");
+        } else {
+            System.out.println("Nao existe notificador, mas cliente foi ativado");
+        }
     }
 //    ponto de injecao de dependencia no setter
 //    @Autowired
